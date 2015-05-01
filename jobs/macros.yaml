@@ -1,0 +1,26 @@
+---
+
+##
+## All common jenkins-job-builder primatives can go in here and be used by all
+
+- builder:
+    name: test-echo
+    builders:
+      - shell: |
+          #!/bin/sh
+          echo "Testing"
+
+- wrapper:
+    name: test-build-timeout
+    wrappers:
+      - timeout:
+          timeout: '{timeout}'
+          timeout-var: 'BUILD_TIMEOUT'
+          fail: true
+
+- publisher:
+    name: test-publisher
+    publishers:
+      - postbuildscript:
+          builders:
+            - shell: 'echo "Shell execution"'

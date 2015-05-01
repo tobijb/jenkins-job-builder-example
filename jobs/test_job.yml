@@ -1,0 +1,13 @@
+- job-template:
+    name: '{name}-test-job1'
+
+    builders:
+      - test-echo 
+
+    publishers:
+      - test-publisher
+
+- job-group:
+    name: 'development-test-jobs'
+    jobs:
+      - '{name}-test-job1'

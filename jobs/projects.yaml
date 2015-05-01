@@ -1,0 +1,9 @@
+---
+
+- project:
+    name: development-test-jobs-project
+    any_other_variable: True
+
+    jobs:
+      - development-test-jobs
+
